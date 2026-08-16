@@ -2,12 +2,14 @@ pipeline {
     agent any
 
     environment {
-        JAVA_HOME        = "/Library/Java/JavaVirtualMachines/jdk-26.jdk/Contents/Home"
-        PATH             = "${JAVA_HOME}/bin:${env.PATH}"
-        IMAGE_TAG        = "${env.BUILD_NUMBER}"
-        BACKEND_IMAGE    = "corona-tracker-backend"
-        FRONTEND_IMAGE   = "corona-tracker-frontend"
-        K8S_NAMESPACE    = "corona-tracker-app-namespace"
+         JAVA_HOME  = "/opt/homebrew/Cellar/openjdk/26.0.2/libexec/openjdk.jdk/Contents/Home"
+         JAVA_HOME  = "/opt/homebrew/Cellar/openjdk/26.0.2/libexec/openjdk.jdk/Contents/Home"
+         NODE_HOME  = "/opt/homebrew/opt/node@20/bin"
+         PATH       = "${NODE_HOME}:${JAVA_HOME}/bin:${env.PATH}"
+         IMAGE_TAG        = "${env.BUILD_NUMBER}"
+         BACKEND_IMAGE    = "corona-tracker-backend"
+         FRONTEND_IMAGE   = "corona-tracker-frontend"
+         K8S_NAMESPACE    = "corona-tracker-app-namespace"
     }
 
     stages {
