@@ -51,7 +51,7 @@ pipeline {
         stage('Frontend Install & Test') {
             steps {
                 dir('corona-tracker-frontend') {
-                    sh 'npm ci'
+                    sh 'npm ci --legacy-peer-deps'
                     sh 'CI=true npm test -- --watchAll=false'
                 }
             }
