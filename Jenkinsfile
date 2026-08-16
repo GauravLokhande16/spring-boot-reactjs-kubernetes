@@ -2,6 +2,8 @@ pipeline {
     agent any
 
     environment {
+        JAVA_HOME        = "/Library/Java/JavaVirtualMachines/jdk-26.jdk/Contents/Home"
+        PATH             = "${JAVA_HOME}/bin:${env.PATH}"
         IMAGE_TAG        = "${env.BUILD_NUMBER}"
         BACKEND_IMAGE    = "corona-tracker-backend"
         FRONTEND_IMAGE   = "corona-tracker-frontend"
